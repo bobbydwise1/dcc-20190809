@@ -31,6 +31,21 @@ const makeRandomWord = () => {
   return output
 }
 
+let k = 16;
+let sentence = [
+  'the',
+  'quick',
+  'brown',
+  'fox',
+  'jumps',
+  'over',
+  'the',
+  'lazy',
+  'dog'
+  ]
+
+
+
 $(document).ready(function() {
   $('#output-section-1').text(1);
 
