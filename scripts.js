@@ -42,9 +42,11 @@ const makeRandomWord = () => {
 
 const justify = (sentence,k) => {
   let output = []
-  let x;
-  for (x of sentence) {
-    output.push(x+"hello")
+  let e;
+  for (e of sentence) {
+    if (output.push(e).length < k) {
+      output.push(e)
+    }
   }
   return output
 }
