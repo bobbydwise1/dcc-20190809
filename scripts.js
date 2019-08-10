@@ -31,6 +31,15 @@ const makeRandomWord = () => {
   return output
 }
 
+const justify = (sentence,k) => {
+  let output = '';
+  for (i=0; i<sentence.length; i++) {
+    output = output+sentence[i];
+    if (i < sentence.length-1) {output = output+' '}
+  }
+  return output;
+}
+
 let k = 16;
 let sentence = [
   'the',
@@ -44,7 +53,8 @@ let sentence = [
   'dog'
   ]
 
-
+let result = justify(sentence,k)
+console.log(result)
 
 $(document).ready(function() {
   $('#output-section-1').text(1);
