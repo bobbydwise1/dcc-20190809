@@ -31,15 +31,6 @@ const makeRandomWord = () => {
   return output
 }
 
-// const justify = (sentence,k) => {
-//   let output = '';
-//   for (i=0; i<sentence.length; i++) {
-//     output = output+sentence[i];
-//     if (i < sentence.length-1) {output = output+' '}
-//   }
-//   return output;
-// }
-
 const justify = (sentence,k) => {
   let output = []
   let temp = ''
@@ -72,23 +63,24 @@ const justify = (sentence,k) => {
   return output
 }
 
-let k = 16;
-let sentence = [
-  'the',
-  'quick',
-  'brown',
-  'fox',
-  'jumps',
-  'over',
-  'the',
-  'lazy',
-  'dog'
-  ]
 
-let result = justify(sentence,k)
-console.log(result)
 
 $(document).ready(function() {
-  $('#output-section-1').text(result);
+  let k = 16;
+  let sentence = [
+    'the',
+    'quick',
+    'brown',
+    'fox',
+    'jumps',
+    'over',
+    'the',
+    'lazy',
+    'dog'
+    ]
+    let result = justify(sentence,k)
+    console.log(result)
+  $('#output-section-1').text(JSON.stringify(sentence));
+  $('#output-section-2').text(JSON.stringify(result));
 
 });
