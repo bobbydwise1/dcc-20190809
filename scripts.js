@@ -19,7 +19,9 @@ For example, given the list of words ["the", "quick", "brown", "fox", "jumps", "
 
 */
 
-
+const makeRandomNum = (lower, upper) => {
+  return Math.round(Math.random()*(upper-lower)+lower);
+}
 
 $(document).ready(function() {
   $('#output-section-1').text(1);
