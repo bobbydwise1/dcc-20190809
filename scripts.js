@@ -31,11 +31,27 @@ const makeRandomWord = () => {
   return output
 }
 
+// const justify = (sentence,k) => {
+//   let output = '';
+//   for (i=0; i<sentence.length; i++) {
+//     output = output+sentence[i];
+//     if (i < sentence.length-1) {output = output+' '}
+//   }
+//   return output;
+// }
+
 const justify = (sentence,k) => {
   let output = '';
+  let count = 0;
   for (i=0; i<sentence.length; i++) {
-    output = output+sentence[i];
-    if (i < sentence.length-1) {output = output+' '}
+    if (output.length+sentence[i].length < k) {
+      output = output+sentence[i];
+      count = output.length;
+    }
+    if (i < sentence.length-1) {
+      output = output+' ';
+      count++;
+     }
   }
   return output;
 }
@@ -57,6 +73,6 @@ let result = justify(sentence,k)
 console.log(result)
 
 $(document).ready(function() {
-  $('#output-section-1').text(1);
+  $('#output-section-1').text(result);
 
 });
