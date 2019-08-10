@@ -41,19 +41,12 @@ const makeRandomWord = () => {
 // }
 
 const justify = (sentence,k) => {
-  let output = '';
-  let count = 0;
-  for (i=0; i<sentence.length; i++) {
-    if (output.length+sentence[i].length < k) {
-      output = output+sentence[i];
-      count = output.length;
-    }
-    if (i < sentence.length-1) {
-      output = output+' ';
-      count++;
-     }
+  let output = []
+  let x;
+  for (x of sentence) {
+    output.push(x+"hello")
   }
-  return output;
+  return output
 }
 
 let k = 16;
