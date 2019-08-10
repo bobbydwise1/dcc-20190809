@@ -42,11 +42,32 @@ const makeRandomWord = () => {
 
 const justify = (sentence,k) => {
   let output = []
+  let temp = ''
   let e;
   for (e of sentence) {
-    if (output.push(e).length < k) {
-      output.push(e)
+    if (temp.length+1+e.length <= k)
+    {
+      if (temp === '') {temp = e} else {temp = temp+' '+e}
+    } else
+    {
+      let extraSpace = k-temp.length;
+      for (i=0; i<extraSpace; i++)
+      {
+        temp = temp+' ';
+      }
+      output.push(temp);
+      temp = e;
     }
+    if (e === sentence[sentence.length-1])
+    {
+      let extraSpace = k-temp.length;
+      for (i=0; i<extraSpace; i++)
+      {
+        temp = temp+' ';
+      }
+      output.push(temp)
+    }
+    console.log('this is temp: ',temp)
   }
   return output
 }
