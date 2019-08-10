@@ -23,6 +23,14 @@ const makeRandomNum = (lower, upper) => {
   return Math.round(Math.random()*(upper-lower)+lower);
 }
 
+const makeRandomWord = () => {
+  let output = '';
+  for (i=0; i < makeRandomNum(1,5); i++) {
+    output = output+String.fromCharCode(makeRandomNum(97,122))
+  }
+  return output
+}
+
 $(document).ready(function() {
   $('#output-section-1').text(1);
 
